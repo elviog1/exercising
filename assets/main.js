@@ -12,7 +12,7 @@ fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards', options)
     .catch(err => console.error(err));
     //isNaN: is not a number - no es un numero
     
-    let card = document.querySelector(".container-html")
+    // let card = document.querySelector(".container-html")
     function mostrar(data){
         let api = data.Naxxramas
         
@@ -54,21 +54,22 @@ fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards', options)
 
        personaje.id =Math.floor(Math.random()*10000)
 
-       let mazo = [personaje]
+       let mazo = [personaje,personaje,personaje]
        mazo.push(personaje)
        console.log(mazo)
        api.push(personaje)
        console.log(api)
 
-       function crearCarta(data){
-           card.innerHTML += `
+       function crearCarta(data,claseHTML){
+        let clasehtml = document.querySelector(`.${claseHTML}`)
+        clasehtml.innerHTML += `
            <h5> ${data.nombre}</h5>
            <h5> ${data.tipo}</h5>
            <h5> ${data.foto}</h5>
            <h5> ${data.health}</h5>
            `
        }
-       crearCarta(personaje)
+       crearCarta(personaje,"container-html")
    }
        
       
