@@ -1,83 +1,63 @@
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '741af78cb0mshf465b0455eafc7fp1341b4jsnb39c36de646e',
-        'X-RapidAPI-Host': 'omgvamp-hearthstone-v1.p.rapidapi.com'
-    }
-};
+let cantidad = -1
 
-fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards', options)
-    .then(response => response.json())
-    .then(response => mostrar(response))
-    .catch(err => console.error(err));
-    //isNaN: is not a number - no es un numero
+
+while (cantidad<0 || isNaN(cantidad)) {
+    cantidad = parseInt(prompt('Ingrese la cantidad de vinos a subir:'))
+    console.log(cantidad)
+}
+
+let arrayDeVinos = []
+if (cantidad>0) {
+    for (let i=1; i<=cantidad; i++) { 
+        let nombre = ""
+        while (nombre.length<4) {
+            nombre = prompt('Ingrese el nombre del vino '+i+':')
+           
+        }
+        let varietal = ""
+        while (varietal.length<4) {
+            varietal = prompt('Ingrese el varietal del vino '+nombre+':')
+            
+        }
+        let foto = ""
+        while (foto.length<10) {
+            foto = prompt('Ingrese la foto del vino '+nombre+' y varietal '+varietal+':')
+          
+        }
+        let año = ""
+        while (isNaN(año) || año<1900) {
+            año = parseInt(prompt('Ingrese la fecha de estacionamiento del vino '+nombre+' y varietal '+varietal+':'))
     
-    // 
-    function mostrar(data){
-        let api = data.Naxxramas // TODAS LAS CARTAS DE HEARTH OF THE STORM
-        
-        console.log(api)
+        }
+        let vino = {
+            nombre: nombre,
+            varietal: varietal,
+            foto: foto,
+            estacionamiento: año
+        }
+
+        vino.id = parseInt(Math.random()*1000000)
+        arrayDeVinos.push(vino)
     
-       let cantidad = -1
+        function crearVino(claseHTML,vino){
+            let html = document.querySelector(`.${claseHTML}`)
+            html.innerHTML += `
+                                <div class="carta">
+                                    <h3>${vino.nombre}</h3>
+                                    <h3>${vino.foto}</h3>
+                                    <h3>${vino.varietal}</h3>
+                                    <h3>${vino.estacionamiento}</h3>
+                                </div>
+            `;
+        } // function crearVino
 
-       while(cantidad<0 || isNaN(cantidad)){
-           cantidad = parseInt(prompt("cuantos queres?"))
-       }
+        // crearVino("container-html",vino)
 
-       let nombre =""
-       while(nombre.length<4){
-           nombre = prompt("nombre del personaje")
-       }
+        function crearMultiplesVinos(claseHTML,arrayVinos){
+            arrayVinos.map(vino => crearVino(claseHTML,vino))
+        }
+        crearMultiplesVinos("container-html",arrayDeVinos)
 
-       let foto = ""
-       while(foto.length<10){
-           foto = prompt("ingrese link de imagen de " + nombre)
-       }
-
-       let tipo =""
-       while(tipo.length < 3){
-           tipo = prompt("ingrese el tipo de carta que es " + nombre)
-       }
-
-       let health= 30
-       while(health>10  || isNaN(health)){
-           health = parseInt(prompt("cuanta vida (health) tiene " + nombre))
-       }
-
-       // CREACION DE CARTA
-       let personaje ={
-           nombre:nombre,
-           tipo: tipo,
-           foto:foto,
-           health:health
-       }
-       
-
-       personaje.id =Math.floor(Math.random()*10000)
-
-       let mazo = [personaje,personaje,personaje]
-       mazo.push(personaje)
-       console.log(mazo)
-       api.push(personaje)
-       console.log(api)
-
-
-       // IMPRIMIR CARTA
-       function crearCarta(data,claseHTML){
-        let clasehtml = document.querySelector(`.${claseHTML}`)
-        clasehtml.innerHTML += `
-           <h5> ${data.nombre}</h5>
-           <h5> ${data.tipo}</h5>
-           <h5> ${data.foto}</h5>
-           <h5> ${data.health}</h5>
-           `
-       }
-       crearCarta(personaje,"container-html")
-   }
-       
-      
-      
-
-
-   
-
+    } // for de cantidad
+} // if de cantidad
+console.log(arrayDeVinos)
