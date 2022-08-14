@@ -12,9 +12,9 @@ fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards', options)
     .catch(err => console.error(err));
     //isNaN: is not a number - no es un numero
     
-    // let card = document.querySelector(".container-html")
+    // 
     function mostrar(data){
-        let api = data.Naxxramas
+        let api = data.Naxxramas // TODAS LAS CARTAS DE HEARTH OF THE STORM
         
         console.log(api)
     
@@ -44,6 +44,7 @@ fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards', options)
            health = parseInt(prompt("cuanta vida (health) tiene " + nombre))
        }
 
+       // CREACION DE CARTA
        let personaje ={
            nombre:nombre,
            tipo: tipo,
@@ -60,6 +61,8 @@ fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards', options)
        api.push(personaje)
        console.log(api)
 
+
+       // IMPRIMIR CARTA
        function crearCarta(data,claseHTML){
         let clasehtml = document.querySelector(`.${claseHTML}`)
         clasehtml.innerHTML += `
