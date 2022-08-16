@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>mr wines - the taste of vines</title>
+</head>
+<body>
+    <header class="bar header">mr wines - the taste of vines</header>
+    <main>
+        <form class="formulario">
+            <label for="nombre">
+                NOMBRE
+                <input type="text" name="nombre">
+            </label>
+            <label for="varietal">
+                VARIETAL
+                <input type="text" name="varietal">
+            </label>
+            <label for="foto">
+                FOTO
+                <input type="text" name="foto">
+            </label>
+            <label for="estacionamiento">
+                AÑO DE ESTACIONAMIENTO
+                <input type="text" name="estacionamiento">
+            </label>
+            <input type="submit" value="cargar" id="subir">
+        </form>
+        <div id="todos"></div>
+        <div id="mayores"></div>
+    </main>
+    <footer class="bar footer">mr wines - the taste of vines</footer>
+    <script src="./assets/almacenamiento.js"></script>
+    <script src="./assets/formulario.js"></script>    
+    <script src="./assets/plantilla.js"></script>
+    <script src="./assets/renderizado.js"></script>
+    <script src="./assets/crear.js"></script>
+</body>
+</html>

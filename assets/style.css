@@ -1,4 +1,4 @@
-.carta{
+.datos{
     width: 10rem;
     border: 1px solid black;
     margin: 10px;
@@ -6,6 +6,12 @@
     background-color: antiquewhite;
 }
 
-.fotoCard{
+.foto{
     width: 10rem;
 }
+
+#mayores, #todos{
+    display: flex;
+    flex-wrap: wrap;
+}
+

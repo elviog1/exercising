@@ -2,23 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>mr wines - the taste of vines</title>
 </head>
 <body>
-    <main class="main">
-        <div class="container-html">
-
-
-        </div>
-    </main> 
-    
-    <script src="./assets/main.js"></script>
+    <header class="bar header">mr wines - the taste of vines</header>
+    <main>
+        <form class="filtro">
+            <label for="palabra">Escriba</label>
+            <input type="text" placeholder="un varietal" id="palabra" name="varietal" class="grow">
+            <label for="mayor">
+                MAYOR A 2010
+            </label>
+            <input type="radio" id="mayor" name="filtroFecha">
+            <label for="menor">
+                MENOR A 2010
+            </label>
+            <input type="radio" id="menor" name="filtroFecha">
+            <label for="todosT">
+                TODOS
+            </label> 
+            <input type="radio" id="todosT" name="filtroFecha"> 
+        </form>
+        <div id="todos"></div>
+    </main>
+    <footer class="bar footer">mr wines - the taste of vines</footer>
+    <script src="./assets/almacenamiento.js"></script>
+    <script src="./assets/plantilla.js"></script>
+    <script src="./assets/renderizado.js"></script>
+    <script src="./assets/mostrar.js"></script>    
 </body>
 </html>
-
-
-
-
