@@ -1,17 +1,154 @@
-.datos{
-    width: 10rem;
-    border: 1px solid black;
-    margin: 10px;
-    text-align: center;
-    background-color: antiquewhite;
+body {
+	background-color: gray;
+	color:  rgb(20, 20, 20);
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
 }
 
-.foto{
-    width: 10rem;
+.bar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	font-family: 'Roboto Slab';
+	font-size: 20px;
+	width: 100%;
+	height: 50px;
+	background-color: rgb(20, 20, 20);
+	color: white;
 }
 
-#mayores, #todos{
-    display: flex;
-    flex-wrap: wrap;
+.header {
+	margin-bottom: 10px;
 }
 
+.footer {
+	margin-top: 10px;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+#wines , #todos, #mayores, #todosTodos {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+}
+
+.datos {
+	background-color: white;
+	border: 10px solid white;
+	font-size: 15px;
+	width: 23%;
+	margin: 10px 0;
+	box-sizing: border-box;
+	color: rgb(20, 20, 20);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.datos:hover {
+	border: 10px solid purple;
+	box-shadow: 0px 0px 50px pink;
+}
+.datos:focus {
+	border: 10px solid purple;
+	box-shadow: 0px 0px 50px pink;
+}
+
+h2 {
+	margin-top: 10px;
+	padding-top: 10px;
+	margin-bottom: 5px;
+}
+h4 {
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+.foto {
+	height: 150px;
+	width: 150px;
+	object-fit: cover !important;
+}
+
+button {
+	font-family: 'Roboto Slab';
+	font-size: 20px;
+	width: 100%;
+	background-color: rgb(20, 20, 20);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+}
+button:hover {
+	background-color: silver;
+	color: rgb(20, 20, 20);
+	font-weight: bold;
+	border: 0 solid white;
+}
+
+#last {
+	font-size: 20px;
+	font-weight: bold;
+	width: 100%;
+	background-color: purple;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+#carrito {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-grow: 1;
+}
+
+.carritoAuto {
+	background-color: white;
+	width: 80%;
+	display: flex;
+	margin: 5px;
+	padding: 5px;
+}
+
+.dato {
+	width: 32%;
+	margin: 0 !important;
+}
+
+.button {
+	width: 4%;
+}
+
+.formulario {
+	display: flex;
+	flex-direction: column;
+}
+
+.formulario {
+	display: flex;
+	width: 100%;
+}
+
+.grow {
+	flex-grow: 1;
+}
